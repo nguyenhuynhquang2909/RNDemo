@@ -7,14 +7,23 @@ import Color from './constant/color';
 
 export default function App() {
   const[userNumber, setUserNumber]  = useState();
-  
+  const [gameIsOver, setGameIsOver] = useState(true );
+
   function pickNumberHandler(pickedNumber) {
     setUserNumber(pickedNumber);
+    setGameIsOver(false);
+  }
+  function GameOverHandler() {
+    setGameIsOver(true);
   }
   let screen = <StartGameScreen onPickNumber={pickNumberHandler} />;
   if (userNumber) {
-    screen = <GameScreen />;
+    screen = <GameScreen userNumber={userNumber} onGameOver={GameOverHandler} />;
   }
+  if (gameIsOver && userNumber) {
+    screen = <GameOverScreen />
+  }
+
   return (
     <LinearGradient colors={[Color.primary700, Color.accent500]} style={styles.rootScreen}>
       <ImageBackground 

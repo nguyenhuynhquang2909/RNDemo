@@ -1,6 +1,6 @@
 import {Text, StyleSheet} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import Color from '../constant/color';
+import Color from '../../constant/color';
 
 function Title({children}) {
     return  <Text style={styles.title}>{children}</Text>
