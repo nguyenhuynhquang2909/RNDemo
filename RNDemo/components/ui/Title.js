@@ -1,5 +1,4 @@
 import {Text, StyleSheet} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Color from '../../constant/color';
 
 function Title({children}) {
@@ -8,6 +7,7 @@ function Title({children}) {
 export default Title;
 const styles = StyleSheet.create({
     title: {
+        fontFamily: 'open-sans-bold',
         fontSize: 18,
         fontWeight: 'bold',
         color: Color.accent500,
